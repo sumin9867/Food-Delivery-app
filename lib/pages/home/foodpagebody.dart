@@ -1,10 +1,10 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/utils/appcolor.dart';
-import 'package:food_delivery/utils/dimension.dart';
-import 'package:food_delivery/widget/Big_text.dart';
-import 'package:food_delivery/widget/icons_text.dart';
-import 'package:food_delivery/widget/samll_text.dart';
+import 'package:project2/utils/appcolor.dart';
+import 'package:project2/utils/dimension.dart';
+import 'package:project2/widget/Big_text.dart';
+import 'package:project2/widget/icons_text.dart';
+import 'package:project2/widget/samll_text.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({super.key});
@@ -156,7 +156,7 @@ Widget _buildPageItem(int index) {
             color: index.isEven ? Colors.yellow : Colors.deepPurple,
             image: const DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assets/images/food1.jpg"))),
+                image: AssetImage("assets/images/food2.jpeg"))),
       ),
       Align(
         alignment: Alignment.bottomCenter,
@@ -180,66 +180,63 @@ Widget _buildPageItem(int index) {
                   offset: Offset(5, 0),
                 ),
               ]),
-          child: Container(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(
-                      text: "Chinese Side",
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              BigText(
+                text: "Chinese Side",
+              ),
+              SizedBox(height: Dimensions.height10),
+              Row(
+                children: [
+                  Wrap(
+                      children: List.generate(
+                    5,
+                    (index) => Icon(
+                      Icons.star,
+                      color: AppColor.mainColor,
+                      size: 16,
                     ),
-                    SizedBox(height: Dimensions.height10),
-                    Row(
-                      children: [
-                        Wrap(
-                            children: List.generate(
-                          5,
-                          (index) => Icon(
-                            Icons.star,
-                            color: AppColor.mainColor,
-                            size: 16,
-                          ),
-                        )),
-                        SizedBox(width: Dimensions.width10),
-                        SmallText(
-                          text: "4.5",
-                        ),
-                        SizedBox(width: Dimensions.width30),
-                        SmallText(
-                          text: "1265",
-                        ),
-                        const SizedBox(width: 5),
-                        SmallText(
-                          text: "comments",
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconTextWidget(
-                          icon: Icons.circle_sharp,
-                          text: "Normal",
-                          iconColor: AppColor.iconcolor1,
-                        ),
-                        IconTextWidget(
-                          icon: Icons.location_on,
-                          text: "1.5km",
-                          iconColor: AppColor.mainColor,
-                        ),
-                        IconTextWidget(
-                          icon: Icons.access_time_rounded,
-                          text: "32 min",
-                          iconColor: AppColor.iconColor2,
-                        )
-                      ],
-                    )
-                  ]),
-            ),
+                  )),
+                  SizedBox(width: Dimensions.width10),
+                  SmallText(
+                    text: "4.5",
+                  ),
+                  SizedBox(width: Dimensions.width30),
+                  SmallText(
+                    text: "1265",
+                  ),
+                  const SizedBox(width: 5),
+                  SmallText(
+                    text: "comments",
+                  )
+                ],
+              ),
+              SizedBox(
+                height: Dimensions.height20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconTextWidget(
+                    icon: Icons.circle_sharp,
+                    text: "Normal",
+                    iconColor: AppColor.iconcolor1,
+                  ),
+                  IconTextWidget(
+                    icon: Icons.location_on,
+                    text: "1.5km",
+                    iconColor: AppColor.mainColor,
+                  ),
+                  IconTextWidget(
+                    icon: Icons.access_time_rounded,
+                    text: "32 min",
+                    iconColor: AppColor.iconColor2,
+                  )
+                ],
+              )
+            ]),
           ),
         ),
       )
