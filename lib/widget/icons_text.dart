@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project2/widget/samll_text.dart';
+import 'package:food_delivery/widget/samll_text.dart';
 
 class IconTextWidget extends StatelessWidget {
   final IconData icon;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project2/utils/dimension.dart';
-
+import 'package:food_delivery/utils/dimension.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class BigText extends StatelessWidget {
