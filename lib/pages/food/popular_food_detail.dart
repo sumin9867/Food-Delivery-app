@@ -21,7 +21,7 @@ class FoodDetail extends StatelessWidget {
             child: Container(
               width: double.maxFinite,
               height: Dimensions.popularImageHeight,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage("assets/images/food1.jpg"))),
@@ -31,7 +31,7 @@ class FoodDetail extends StatelessWidget {
             left: Dimensions.width20,
             right: Dimensions.width20,
             top: Dimensions.height20,
-            child: Row(
+            child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppIcon(
@@ -52,17 +52,72 @@ class FoodDetail extends StatelessWidget {
                     left: Dimensions.width20,
                     right: Dimensions.width20,
                     top: Dimensions.height20),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20)),
                     color: Colors.white),
-                child: AppColumn(
-                  text: "Chinese Slide",
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const AppColumn(
+                      text: "Chinese Slide",
+                    ),
+                    SizedBox(
+                      height: Dimensions.height20,
+                    ),
+                    BigText(
+                      text: "Intoduction",
+                      size: Dimensions.fontMedium,
+                    )
+                  ],
                 )),
-          )
+          ),
         ]),
       ),
+      bottomNavigationBar: Container(
+          height: Dimensions.botttmheight,
+          padding: EdgeInsets.all(Dimensions.size20),
+          decoration: BoxDecoration(
+              color: AppColor.buttonBackgroundColor,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(Dimensions.size20 * 2),
+                  topLeft: Radius.circular(Dimensions.size20 * 2))),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Container(
+                padding: EdgeInsets.all(Dimensions.size10),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(Dimensions.size20)),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.remove,
+                      color: AppColor.signColor,
+                    ),
+                    SizedBox(width: Dimensions.size5),
+                    BigText(
+                      text: "0",
+                    ),
+                    SizedBox(width: Dimensions.size5),
+                    Icon(
+                      Icons.add,
+                      color: AppColor.signColor,
+                    ),
+                  ],
+                )),
+            Container(
+              padding: EdgeInsets.all(Dimensions.size10),
+              child: BigText(
+                text: "\$10  Add to cart",
+                size: Dimensions.fontMedium,
+              ),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Dimensions.size10),
+                  color: AppColor.mainColor),
+            )
+          ])),
     );
   }
 }
