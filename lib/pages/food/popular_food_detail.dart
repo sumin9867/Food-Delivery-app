@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:project2/pages/food/expandabletext.dart';
 import 'package:project2/utils/appcolor.dart';
 import 'package:project2/utils/dimension.dart';
 import 'package:project2/widget/Big_text.dart';
@@ -69,6 +72,13 @@ class FoodDetail extends StatelessWidget {
                     BigText(
                       text: "Intoduction",
                       size: Dimensions.fontMedium,
+                    ),
+                    SizedBox(
+                      height: Dimensions.height15,
+                    ),
+                    ExpandableText(
+                      text:
+                          "jkkbjosbcjwbcuowdcbwmkdbcuowecbwmknbcuwecwmkdnbcuwjc wkmdcbiujw wkjncb ",
                     )
                   ],
                 )),
