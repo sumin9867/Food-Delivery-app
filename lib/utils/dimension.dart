@@ -45,5 +45,5 @@ class Dimensions {
   static double size45 = screenHeight / 15.18;
 
 // bottom height
-  static double botttmheight = screenHeight / 8.03;
+  static double botttmheight = screenHeight / 9.03;
 }

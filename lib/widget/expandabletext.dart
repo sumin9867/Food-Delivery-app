@@ -16,7 +16,7 @@ class _ExpandableTextState extends State<ExpandableText> {
   late String firstHalf;
   late String secondHalf;
   bool hiddenText = true;
-  double textHeight = Dimensions.screenHeight / 4.63;
+  double textHeight = Dimensions.screenHeight / 1.63;
   @override
   void initState() {
     // TODO: implement initState
