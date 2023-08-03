@@ -55,91 +55,92 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ]),
         ),
         // List section
-        Container(
-          height: 1000,
-          child: ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: 20,
-            itemBuilder: (context, index) {
-              return Container(
-                child: Row(children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                        left: Dimensions.width20, top: Dimensions.height20),
-                    height: 150,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                        image: const DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/food2.jpeg"))),
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(right: Dimensions.width20),
-                          padding: EdgeInsets.only(bottom: Dimensions.height10),
-                          height: 120,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(20),
-                                  bottomRight: Radius.circular(20)),
-                              color: Color.fromARGB(255, 255, 255, 255)),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 20, right: 20, left: 20),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  BigText(
-                                    text:
-                                        "Chinese Sidejbhvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10,
-                                  ),
-                                  SmallText(
-                                    text: "specially from italy in th egonioou",
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      IconTextWidget(
-                                        icon: Icons.circle_sharp,
-                                        text: "Normal",
-                                        iconColor: AppColor.iconcolor1,
-                                      ),
-                                      IconTextWidget(
-                                        icon: Icons.location_on,
-                                        text: "1.5km",
-                                        iconColor: AppColor.mainColor,
-                                      ),
-                                      IconTextWidget(
-                                        icon: Icons.access_time_rounded,
-                                        text: "32 min",
-                                        iconColor: AppColor.iconColor2,
-                                      )
-                                    ],
-                                  )
-                                ]),
-                          ),
+
+        ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 20,
+          itemBuilder: (context, index) {
+            return Container(
+              child: Row(children: [
+                Container(
+                  margin: EdgeInsets.only(
+                      left: Dimensions.width20, top: Dimensions.height20),
+                  height: Dimensions.size150,
+                  width: Dimensions.size150,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/food1.jpg"))),
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: Dimensions.width20),
+                        padding: EdgeInsets.only(bottom: Dimensions.height10),
+                        height: Dimensions.homepagetrend,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(20),
+                                bottomRight: Radius.circular(20)),
+                            color: Color.fromARGB(255, 255, 255, 255)),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: Dimensions.size20,
+                              right: Dimensions.size20,
+                              left: Dimensions.size20),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                BigText(
+                                  text:
+                                      "Chinese Sidejbhvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
+                                ),
+                                SizedBox(
+                                  height: Dimensions.height10,
+                                ),
+                                SmallText(
+                                  text: "specially from italy in th egonioou",
+                                ),
+                                SizedBox(
+                                  height: Dimensions.height10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    IconTextWidget(
+                                      icon: Icons.circle_sharp,
+                                      text: "Normal",
+                                      iconColor: AppColor.iconcolor1,
+                                    ),
+                                    IconTextWidget(
+                                      icon: Icons.location_on,
+                                      text: "1.5km",
+                                      iconColor: AppColor.mainColor,
+                                    ),
+                                    IconTextWidget(
+                                      icon: Icons.access_time_rounded,
+                                      text: "32 min",
+                                      iconColor: AppColor.iconColor2,
+                                    )
+                                  ],
+                                )
+                              ]),
                         ),
-                      ],
-                    ),
-                  )
-                ]),
-              );
-            },
-          ),
-        )
+                      ),
+                    ],
+                  ),
+                )
+              ]),
+            );
+          },
+        ),
       ],
     );
   }
@@ -150,7 +151,8 @@ Widget _buildPageItem(int index) {
     children: [
       Container(
         height: Dimensions.pageViewContainer,
-        margin: const EdgeInsets.only(left: 5, right: 5),
+        margin:
+            EdgeInsets.only(left: Dimensions.size5, right: Dimensions.size5),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             color: index.isEven ? Colors.yellow : Colors.deepPurple,
@@ -162,7 +164,10 @@ Widget _buildPageItem(int index) {
         alignment: Alignment.bottomCenter,
         child: Container(
           height: Dimensions.pageTextContainer,
-          margin: const EdgeInsets.only(left: 35, right: 35, bottom: 15),
+          margin: EdgeInsets.only(
+              left: Dimensions.size35,
+              right: Dimensions.size35,
+              bottom: Dimensions.size15),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: Colors.white,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project2/pages/home/foodpagebody.dart';
 import 'package:project2/utils/appcolor.dart';
+import 'package:project2/utils/dimension.dart';
 import 'package:project2/widget/Big_text.dart';
 import 'package:project2/widget/samll_text.dart';
 
@@ -23,9 +24,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
         children: [
           Container(
             child: Container(
-              margin: const EdgeInsets.only(top: 10, bottom: 20),
+              margin: EdgeInsets.only(
+                  top: Dimensions.size15, bottom: Dimensions.size10),
               child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20),
+                padding: EdgeInsets.only(
+                    left: Dimensions.size20, right: Dimensions.size20),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -49,8 +52,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
                         ],
                       ),
                       Container(
-                        width: 45,
-                        height: 45,
+                        width: Dimensions.size45,
+                        height: Dimensions.size45,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: AppColor.mainColor,

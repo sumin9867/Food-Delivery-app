@@ -8,6 +8,8 @@ class Dimensions {
   static double pageView = screenHeight / 2.64;
   static double Containerpage = screenHeight / 2.64;
   static double pageTextContainer = screenHeight / 7.03;
+  static double homepagetrend = screenHeight / 8.13;
+  static double Trndinglistcont = screenHeight / 3.9;
 
   static double height10 = screenHeight / 97.61;
   static double height20 = screenHeight / 48.80;
@@ -29,20 +31,22 @@ class Dimensions {
   static double popularImageHeight = screenHeight / 2.78;
 
 //683/210=3.25
-  static double size300 = screenHeight / 2.28;
+  static double size300 = screenHeight / 3.28;
   static double size285 = screenHeight / (screenHeight / 285);
   static double size210 = screenHeight / 3.25;
   static double size260 = screenHeight / 2.63;
   static double size120 = screenHeight / 5.69;
   static double size110 = screenHeight / (screenHeight / 110);
   static double size100 = screenHeight / 6.83;
-  static double size5 = screenHeight / 136.6;
-  static double size10 = screenHeight / 68;
-  static double size15 = screenHeight / 45;
-  static double size20 = screenHeight / 34.15;
-  static double size25 = screenHeight / (screenHeight / 25);
-  static double size30 = screenHeight / 22.77;
-  static double size45 = screenHeight / 15.18;
+  static double size5 = screenHeight / 195.6;
+  static double size10 = screenHeight / 97.6;
+  static double size15 = screenHeight / 65.07;
+  static double size20 = screenHeight / 48.80;
+  static double size25 = screenHeight / 39.04;
+  static double size30 = screenHeight / 32.77;
+  static double size35 = screenHeight / 37.77;
+  static double size45 = screenHeight / 21.18;
+  static double size150 = screenHeight / 6.50;
 
 // bottom height
   static double botttmheight = screenHeight / 9.03;
