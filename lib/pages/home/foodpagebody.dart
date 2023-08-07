@@ -1,5 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project2/controller/popular_controller.dart';
 import 'package:project2/utils/appcolor.dart';
 import 'package:project2/utils/dimension.dart';
 import 'package:project2/widget/Big_text.dart';
@@ -149,17 +151,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 Widget _buildPageItem(int index) {
   return Stack(
     children: [
-      Container(
-        height: Dimensions.pageViewContainer,
-        margin:
-            EdgeInsets.only(left: Dimensions.size5, right: Dimensions.size5),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: index.isEven ? Colors.yellow : Colors.deepPurple,
-            image: const DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage("assets/images/food2.jpeg"))),
-      ),
+  GetBuilder<PopularProductController>(builder: (controller) => (popularProduct),)
       Align(
         alignment: Alignment.bottomCenter,
         child: Container(
