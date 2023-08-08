@@ -1,20 +1,30 @@
-import 'dart:ffi';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
-import 'package:project2/widget/expandabletext.dart';
+import 'package:get/get.dart';
+import 'package:project2/controller/popular_controller.dart';
+
 import 'package:project2/utils/appcolor.dart';
 import 'package:project2/utils/dimension.dart';
 import 'package:project2/widget/Big_text.dart';
 import 'package:project2/widget/app_column.dart';
 import 'package:project2/widget/appicon.dart';
+import 'package:project2/widget/expandabletext.dart';
 import 'package:project2/widget/icons_text.dart';
 import 'package:project2/widget/samll_text.dart';
 
 class FoodDetail extends StatelessWidget {
-  const FoodDetail({super.key});
+  int pageId;
+  FoodDetail({
+    super.key,
+    required this.pageId,
+  });
 
   @override
   Widget build(BuildContext context) {
+    var product =
+        Get.find<PopularProductController>().popularProductList[pageId];
+    print(pageId.toString());
     return Scaffold(
       body: SafeArea(
         child: Stack(children: [
