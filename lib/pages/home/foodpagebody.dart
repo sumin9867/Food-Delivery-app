@@ -2,6 +2,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project2/controller/popular_controller.dart';
+import 'package:project2/models/prodcut_model.dart';
+import 'package:project2/utils/app_constant.dart';
 import 'package:project2/utils/appcolor.dart';
 import 'package:project2/utils/dimension.dart';
 import 'package:project2/widget/Big_text.dart';
@@ -23,15 +25,22 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     return Column(
       children: [
         // slider section
-        Container(
-          height: Dimensions.pageView,
-          child: PageView.builder(
-              controller: pageController,
-              itemCount: 4,
-              itemBuilder: (context, index) {
-                return _buildPageItem(index);
-              }),
-        ),
+        GetBuilder<PopularProductController>(builder: (popularProduct) {
+          return popularProduct.isLoaded
+              ? Container(
+                  height: Dimensions.pageView,
+                  child: PageView.builder(
+                      controller: pageController,
+                      itemCount: popularProduct.popularProductList.length,
+                      itemBuilder: (context, position) {
+                        return _buildPageItem(position,
+                            popularProduct.popularProductList[position]);
+                      }),
+                )
+              : CircularProgressIndicator(
+                  color: AppColor.mainColor,
+                );
+        }),
         // dot section
         DotsIndicator(
           dotsCount: 5,
@@ -52,7 +61,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           margin: EdgeInsets.only(left: Dimensions.width30),
           child: Row(children: [
             BigText(
-              text: "Trending",
+              text: "Reccomended",
             )
           ]),
         ),
@@ -148,10 +157,21 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   }
 }
 
-Widget _buildPageItem(int index) {
+Widget _buildPageItem(int index, ProductModel popularProduct) {
   return Stack(
     children: [
-  GetBuilder<PopularProductController>(builder: (controller) => (popularProduct),)
+      Container(
+        height: Dimensions.pageViewContainer,
+        margin:
+            EdgeInsets.only(left: Dimensions.size5, right: Dimensions.size5),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: index.isEven ? Colors.yellow : Colors.deepPurple,
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                    AppConstants.baseUrl + "/uploads/" + popularProduct.img!))),
+      ),
       Align(
         alignment: Alignment.bottomCenter,
         child: Container(
@@ -182,7 +202,7 @@ Widget _buildPageItem(int index) {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               BigText(
-                text: "Chinese Side",
+                text: popularProduct.name!,
               ),
               SizedBox(height: Dimensions.height10),
               Row(
