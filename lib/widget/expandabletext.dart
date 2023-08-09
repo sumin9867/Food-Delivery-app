@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:project2/utils/appcolor.dart';
 import 'package:project2/utils/dimension.dart';
 import 'package:project2/widget/samll_text.dart';
+import 'package:project2/widget/text_detail.dart';
 
 class ExpandableText extends StatefulWidget {
   final String text;
@@ -35,10 +36,10 @@ class _ExpandableTextState extends State<ExpandableText> {
   Widget build(BuildContext context) {
     return Container(
       child: secondHalf.isEmpty
-          ? SmallText(text: firstHalf, size: Dimensions.fontSmall)
+          ? DetailText(text: firstHalf, size: Dimensions.fontSmall)
           : Column(
               children: [
-                SmallText(
+                DetailText(
                     height: 1.4,
                     color: AppColor.paraColor,
                     size: Dimensions.fontSmall,
@@ -53,7 +54,7 @@ class _ExpandableTextState extends State<ExpandableText> {
                   },
                   child: Row(
                     children: [
-                      SmallText(
+                      DetailText(
                           text: hiddenText ? 'Show more' : ' Scroll back',
                           color: AppColor.mainColor),
                       Icon(
